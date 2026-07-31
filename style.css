@@ -347,16 +347,38 @@ a {
     color: #888;
 }
 
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    transition: all 0.3s;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
     .header-container {
-        flex-direction: column;
-        gap: 1rem;
+        flex-wrap: wrap;
+    }
+    .hamburger {
+        display: flex;
     }
     .simple-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding-top: 1rem;
         gap: 1.5rem;
-        flex-wrap: wrap;
-        justify-content: center;
+    }
+    .simple-nav.show-nav {
+        display: flex;
     }
     .hero-section {
         grid-template-columns: 1fr;
